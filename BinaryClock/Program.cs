@@ -34,13 +34,10 @@ namespace BinaryClock
 
             if (ora < 20 &&  ora >= 10) Console.WriteLine ("  H + -"); // Led H 1
             if (ora > 20 || ora == 20) Console.WriteLine("  H - +"); // Led H 2
-            if (ora == 0 || ora < 10) Console.WriteLine("  H - -"); // Led H 0
+            if (ora < 10) Console.WriteLine("  H - -"); // Led H 0
 
             int hOra = ora;
-            while (hOra > 10)
-            {
-                hOra = hOra - 10;
-            }
+            while (hOra > 10) hOra = hOra - 10;
             if (hOra == 1 || hOra == 3 || hOra == 5 || hOra == 7 || hOra == 9) Console.Write("  h + "); else Console.Write("  h - ");
             if (hOra == 2 || hOra == 3 || hOra == 6 || hOra == 7) Console.Write("+ "); else Console.Write("- ");
             if (hOra == 4 || hOra == 5 || hOra == 6 || hOra == 7) Console.Write("+ "); else Console.Write("- ");
@@ -61,11 +58,7 @@ namespace BinaryClock
 
             hMin = min;
 
-            while (hMin > 10)
-            {
-                hMin = hMin - 10;
-            }
-
+            while (hMin > 10) hMin = hMin - 10;
             if (hMin == 1 || hMin == 3 || hMin == 5 || hMin == 7 || hMin == 9) Console.Write("  m + "); else Console.Write("  m - ");
             if (hMin == 2 || hMin == 3 || hMin == 6 || hMin == 7) Console.Write("+ "); else Console.Write("- ");
             if (hMin == 4 || hMin == 5 || hMin == 6 || hMin == 7) Console.Write("+ "); else Console.Write("- ");
@@ -86,11 +79,7 @@ namespace BinaryClock
 
             hSec = sec;
 
-            while (hSec > 10)
-            {
-                hSec = hSec - 10;
-            }
-
+            while (hSec > 10) hSec = hSec - 10;
             if (hSec == 1 || hSec == 3 || hSec == 5 || hSec == 7 || hSec == 9) Console.Write("  s + "); else Console.Write("  s - ");
             if (hSec == 2 || hSec == 3 || hSec == 6 || hSec == 7) Console.Write("+ "); else Console.Write("- ");
             if (hSec == 4 || hSec == 5 || hSec == 6 || hSec == 7) Console.Write("+ "); else Console.Write("- ");
