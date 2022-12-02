@@ -10,10 +10,11 @@ namespace BinaryClock
     internal class Program
     {
         
-        
+
+
         static void Main()
         {
-
+            Start();
             string now = string.Format("{0:HH:mm:ss}", DateTime.Now);
             char[] separator = new char[] { ' ', ',', ':' };
             string[] x = now.Split(separator, StringSplitOptions.RemoveEmptyEntries);
@@ -31,11 +32,11 @@ namespace BinaryClock
             Console.WriteLine();
             /// aratam ora (+ este aprins / - este stins)
 
-            if (Ora < 20 &&  Ora > 10) Console.WriteLine ("  H + -"); // Led H 1
-            if (Ora > 20 || Ora == 20) Console.WriteLine("  H - +"); // Led H 2
-            if (Ora == 0 || Ora < 10) Console.WriteLine("  H - -"); // Led H 0
+            if (ora < 20 &&  ora >= 10) Console.WriteLine ("  H + -"); // Led H 1
+            if (ora > 20 || ora == 20) Console.WriteLine("  H - +"); // Led H 2
+            if (ora == 0 || ora < 10) Console.WriteLine("  H - -"); // Led H 0
 
-            int hOra = Ora;
+            int hOra = ora;
             while (hOra > 10)
             {
                 hOra = hOra - 10;
@@ -98,7 +99,12 @@ namespace BinaryClock
             System.Threading.Thread.Sleep(1000);
             Console.Clear();
             Main();
+            Start();
         }
 
+        private static void Start()
+        {
+            
+        }
     }
 }
